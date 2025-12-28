@@ -1,0 +1,25 @@
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Temporary / backups ----
+*.tmp
+*.temp
+*.bak
+*.autosave
+*.log
+
+# ---- Build / export outputs (don’t commit builds) ----
+build/
+Build/
+dist/
+Dist/
+output/
+Output/
+exports/
+Exports/
+
+# ---- If your IDE creates folders ----
+.vscode/
+.idea/
