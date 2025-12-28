@@ -97,10 +97,10 @@ switch (state) {
             break;
         }
 
-        attack_cooldown -= 1 / room_speed;
+        attack_cooldown -= 1;
         if (attack_cooldown <= 0) {
             target.hp -= attack_damage;
-            attack_cooldown = 1.0 / attack_speed;
+            attack_cooldown = attack_cooldown_frames;
 
             if (target.hp <= 0) {
                 // Award gold for kill

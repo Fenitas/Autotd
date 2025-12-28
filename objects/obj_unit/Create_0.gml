@@ -5,7 +5,7 @@ hp = 30;
 max_hp = 30;
 attack_damage = 5;
 attack_range = 40;
-attack_speed = 1.0 / 60; // Attacks once per second
+attack_cooldown_frames = 60; // Attacks once per second (at 60 fps)
 attack_cooldown = 0;
 
 // Movement
