@@ -1,0 +1,58 @@
+// Game Manager - Draw GUI Event
+
+draw_set_color(c_white);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+
+// Draw game stats
+var _ui_x = 10;
+var _ui_y = 10;
+var _line_height = 20;
+
+draw_text(_ui_x, _ui_y, "Phase: " + phase);
+draw_text(_ui_x, _ui_y + _line_height, "Wave: " + string(wave));
+draw_text(_ui_x, _ui_y + _line_height * 2, "Gold: " + string(gold));
+
+var _enemies_alive = instance_number(obj_enemy);
+var _allies_alive = instance_number(obj_unit);
+
+draw_text(_ui_x, _ui_y + _line_height * 3, "Enemies: " + string(_enemies_alive));
+draw_text(_ui_x, _ui_y + _line_height * 4, "Allies: " + string(_allies_alive));
+
+// Draw "Start Wave" button during BUILD phase
+if (phase == "BUILD") {
+    var _btn_x = room_width / 2 - 60;
+    var _btn_y = 10;
+    var _btn_w = 120;
+    var _btn_h = 30;
+
+    if (draw_button(_btn_x, _btn_y, _btn_w, _btn_h, "Start Wave")) {
+        // Start wave phase
+        phase = "WAVE";
+
+        // Spawn enemies
+        instance_create_depth(room_width / 2, 0, 0, obj_spawner);
+    }
+
+    // Draw grid overlay
+    draw_grid_overlay(grid_start_x, grid_start_y, grid_width, grid_height, cell_size);
+
+    // Highlight hovered cell
+    var _grid_coords = world_to_grid(mouse_x, mouse_y, grid_start_x, grid_start_y, cell_size);
+    var _gx = _grid_coords.gx;
+    var _gy = _grid_coords.gy;
+
+    if (is_grid_cell_valid(_gx, _gy, grid_width, grid_height)) {
+        var _occupied = is_grid_cell_occupied(_gx, _gy, grid_start_x, grid_start_y, cell_size);
+        var _valid = !_occupied && gold >= 10;
+        draw_hovered_cell(_gx, _gy, grid_start_x, grid_start_y, cell_size, _valid);
+    }
+}
+
+// Draw low gold message
+if (show_low_gold_message) {
+    draw_set_color(c_red);
+    draw_set_halign(fa_center);
+    draw_text(room_width / 2, room_height / 2, "Not enough gold!");
+    draw_set_halign(fa_left);
+}
