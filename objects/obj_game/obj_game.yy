@@ -1,0 +1,30 @@
+{
+  "$GMObject":"v1",
+  "%Name":"obj_game",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"m_owner":"6e1a21f2-ea74-4d68-ad8f-f96b6fe0bc8f"},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"m_owner":"6e1a21f2-ea74-4d68-ad8f-f96b6fe0bc8f"},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"m_owner":"6e1a21f2-ea74-4d68-ad8f-f96b6fe0bc8f"},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"m_owner":"6e1a21f2-ea74-4d68-ad8f-f96b6fe0bc8f"},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"m_owner":"6e1a21f2-ea74-4d68-ad8f-f96b6fe0bc8f"}
+  ],
+  "managed":true,
+  "overriddenProperties":[],
+  "parent":{
+    "name":"Holy war",
+    "path":"Holy war.yyp"
+  },
+  "parentRoom":null,
+  "physicsObject":false,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "roomResource":null,
+  "solid":false,
+  "spriteId":null,
+  "visible":true
+}
